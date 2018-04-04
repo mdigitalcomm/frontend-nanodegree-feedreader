@@ -35,16 +35,24 @@ gulp.task('copy-html', function() {
 		.pipe(gulp.dest('./dist'));
 });
 
+gulp.task('copy-readme', function() {
+	gulp.src('app/README.md')
+		.pipe(gulp.dest('./dist'));
+});
+
+
 // copy all files to dist folder
-gulp.task('copy', ['styles', 'fonts', 'copy-html', 'js', 'copy-jasmine']);
+gulp.task('copy', ['styles', 'fonts', 'copy-html', 'js', 'copy-jasmine', 'copy-readme']);
 
 
 //Serve and reload on changes to html and js files
 gulp.task('serve',['copy'], function() {
 	gulp.watch('app/index.html', ['copy-html']);
-	gulp.watch('app/jasmine/**/*.js', ['copy-jasmine']);	
+	gulp.watch('app/jasmine/**/*.js', ['copy-jasmine']);
+	gulp.watch('app/js/*.js', ['js']);	
 	gulp.watch('app/**/*.js').on('change', browserSync.reload);
 	gulp.watch('app/index.html').on('change', browserSync.reload);
+	gulp.watch('app/js/*.js').on('change', browserSync.reload);
 	browserSync.init({
 		server: {
 			baseDir: './app'
