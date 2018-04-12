@@ -91,7 +91,8 @@ $(function() {
             });
 
             it('successfully loads initial feeds', (done) => {
-                expect($('.feed').children().length).toBeGreaterThan(0);
+                let entry = $('.feed .entry');
+                expect(entry.length).not.toBe(0);
                 done();
             });    
               
@@ -107,7 +108,7 @@ $(function() {
             let initFeeds;
             beforeEach((done) => {
                 loadFeed(0, () => {
-                    initFeeds = $('.feed').children();
+                    initFeeds = $('.feed').html();
                     loadFeed(1||2||3, () => {
                     done();
                     });  
@@ -116,7 +117,7 @@ $(function() {
             });
 
             it('successfully loads new feeds', (done) => {
-                let nowFeeds = $('.feed').children();
+                let nowFeeds = $('.feed').html();
                 expect(nowFeeds).not.toEqual(initFeeds);
                 done();
             });
