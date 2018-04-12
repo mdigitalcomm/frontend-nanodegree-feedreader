@@ -23,7 +23,7 @@ To succesfully run the project, please follow these steps to install Gulp and pl
 4. Install plugin gulp-uglify
 	$ npm install gulp-uglify --save -dev
 
-5. Now you can launch the project by using command:
+5. To host the app locally on localhost, cd to the root folder of the project and run command:
 	$ gulp serve
 
 
