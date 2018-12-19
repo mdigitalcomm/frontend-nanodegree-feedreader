@@ -3,14 +3,14 @@
 This project includes a series of tests for a web-based application that reads RSS feeds. 
 
 
-## Prereuisites
+## Prerequisites
 This project uses [Jasmine](http://jasmine.github.io/) for testing and [Gulp](https://gulpjs.com/) for build.
 
 You need to have Node.js(Node) installed before you can install Gulp. 
 
 
 ## How to start?
-To succesfully run the project, please follow these steps to install Gulp and plugins used in the project:
+To successfully run the project, please follow these steps to install Gulp and plugins used in the project:
 1. Install Gulp into the project by using command:
 	$ npm install gulp --save -dev
 
